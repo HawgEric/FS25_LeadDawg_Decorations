@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="billboard3x2.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.3"/>
+  </Asset>
+
+  <Files>
+    <File fileId="2" filename="$data/maps/textures/shared/props/billboards/billboards_diffuse.png"/>
+    <File fileId="3" filename="$data/maps/textures/shared/props/billboards/billboards_normal.png"/>
+    <File fileId="4" filename="$data/maps/textures/shared/props/billboards/billboards_specular.png"/>
+    <File fileId="6" filename="$data/shared/default_normal.png"/>
+    <File fileId="5" filename="textures/leaddawg_diffuse.dds"/>
+    <File fileId="8" filename="textures/modfather_diffuse.dds"/>
+    <File fileId="7" filename="textures/trex_diffuse.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="billboards_mat" materialId="38">
+      <Texture fileId="2"/>
+      <Normalmap fileId="3"/>
+      <Glossmap fileId="4"/>
+    </Material>
+    <Material name="lambert1" materialId="39" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="leadDecal_mat" materialId="40">
+      <Texture fileId="5"/>
+      <Normalmap fileId="6"/>
+    </Material>
+    <Material name="modfatherDecal_mat" materialId="41">
+      <Texture fileId="8"/>
+      <Normalmap fileId="6"/>
+    </Material>
+    <Material name="trexDecal_mat" materialId="42">
+      <Texture fileId="7"/>
+      <Normalmap fileId="6"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="billboard3x2.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="billboard" nodeId="47">
+      <Shape name="billboard_3x2" lockedgroup="true" shapeId="1" static="true" collisionFilterGroup="0x3e" collisionFilterMask="0xfffffbff" density="0.0001" clipDistance="350" nodeId="48" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="39">
+        <Shape name="billboard3x2Vis" shapeId="2" clipDistance="350" nodeId="49" castsShadows="true" receiveShadows="true" materialIds="38"/>
+        <Shape name="leadDecal" shapeId="3" clipDistance="200" nodeId="50" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="40"/>
+        <Shape name="trexDecal" shapeId="3" visibility="false" clipDistance="200" nodeId="51" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="42"/>
+        <Shape name="modfatherDecal" shapeId="3" visibility="false" clipDistance="200" nodeId="52" castsShadows="true" receiveShadows="true" decalLayer="1" materialIds="41"/>
+      </Shape>
+      <TransformGroup name="clearArea1Start" translation="-3.26573 0 -0.785273" nodeId="53">
+        <TransformGroup name="clearArea1Height" translation="0 0 1.07936" nodeId="54"/>
+        <TransformGroup name="clearArea1Width" translation="6.49538 0 0" nodeId="55"/>
+      </TransformGroup>
+      <TransformGroup name="levelAreaStart" translation="-3.26573 0 -0.785273" nodeId="56">
+        <TransformGroup name="levelAreaHeight" translation="0 0 1.07936" nodeId="57"/>
+        <TransformGroup name="levelAreaWidth" translation="6.49538 0 0" nodeId="58"/>
+      </TransformGroup>
+      <TransformGroup name="testAreas" nodeId="59">
+        <TransformGroup name="testArea1Start" translation="-3.3261 0 -0.800404" nodeId="60">
+          <TransformGroup name="testArea1End" translation="6.63464 0 1.067" nodeId="61">
+            <TransformGroup name="testArea1Start" translation="-3.3261 0 -0.800404" nodeId="62"/>
+          </TransformGroup>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="tipOcclusionUpdateAreas" nodeId="63">
+        <TransformGroup name="tipOcclusionUpdateAreaStart01" translation="-3.3261 0 -0.800404" nodeId="64">
+          <TransformGroup name="tipOcclusionUpdateAreaEnd01" translation="6.63464 0 1.067" nodeId="65">
+            <TransformGroup name="testArea1Start" translation="-3.3261 0 -0.800404" nodeId="66"/>
+          </TransformGroup>
+        </TransformGroup>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+</i3D>
